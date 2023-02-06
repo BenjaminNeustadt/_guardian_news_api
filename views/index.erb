@@ -1,0 +1,20 @@
+  <div class='news'>
+    <% if @news %>
+    <ul> 
+      <% @news.results_only.each do |result| %>
+        <div class="news-item">
+          <ul class="headline"><%= @news.headline(result)%></ul>
+          <ul class="publish-time"><b>Published on:</b> <%= @news.published?(result) %></ul>
+          <img class="image" src="<%= @news.thumbnail(result) %>"% alt="image">
+          <ul class="category"><%= @news.category(result) %></ul>
+          <ul class="author"><%= @news.author(result) %></ul>
+          <ul class="link">
+            <a href="<%= @news.link(result)%>" target="_blank"> Read More here</a>
+          </ul>
+        </div>
+      <% end %>
+    </ul>
+  <% else %>
+    <p>No data found. API query limit may be exceeded.</p>
+  <% end %>
+  </div>

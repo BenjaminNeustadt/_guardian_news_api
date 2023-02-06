@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <title>NEWS APP</title>
+    <link href="<%= url('/styles.css') %>" rel="stylesheet" type="text/css" />
+  </head>
+  <body>
+    <header>
+        <img class="logo" src="/assets/guardian_logo_reverse.png" alt="Example image">
+        <h1 class="main-title"> GUARDIAN NEWS APP </h1>
+        <h3 class="main-subtitle"> An app for journalists or politicians to see news at a glance </h3>
+
+<div class="form">
+  <form action="/" method="get">
+    <input class="" type="text" name="content" />
+    <input class="button" type="submit" value="Search a topic" />
+  </form>
+</div>
+
+    </header>
+      <main>
+        <%=yield%>
+      </main>
+  </body>
+   <img class="logo" src="/assets/guardian_logo_black.png" alt="Example image">
+</html>
+
