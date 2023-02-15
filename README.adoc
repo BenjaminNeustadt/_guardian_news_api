@@ -1,0 +1,33 @@
+// URLS
+:url-live-link:  https://guardian-news-app.onrender.com/
+:url-guardian-api: https://open-platform.theguardian.com/access/
+:url-guardian-docs: https://open-platform.theguardian.com/documentation/
+
+
+= GUARDIAN NEWS API
+
+
+This program runs a call to the Guardian News API, and returns the news articles relevant to the users search query.
+The return length is paginated, to only return 10 articles per page.
+
+= Usage
+
+The live link to this program can be found {url-live-link}[here].
+
+To use this program locally, follow these steps:
+
+1. Clone this repository
+2. Run `bundle install` to ensure your system has the correct dependencies
+3. Set-up your own personal 'Guardian' API key {url-guardian-api}[here] (refer to docs {url-guardian-docs}[here])
+4. Create a '.env' file in the root, and paste in your personal API key like so:
+
+```env
+GUARDIAN_API_KEY=[Your API key here, no quotes]
+```
+5. To run the tests and ensure the logic of the API connection is working: `rspec -fd`
+
+You can now run the program on your local server with the `rackup` command
+
+= Specs
+
+The tests use mocking to ensure that the API is not hit everytime the tests run.
